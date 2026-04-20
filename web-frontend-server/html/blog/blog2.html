@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiến trúc Microservices - MyMiniCloud Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+        }
+        .meta {
+            color: #ecf0f1;
+            font-size: 0.9em;
+        }
+        .content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .featured-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3em;
+            font-weight: bold;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-top: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-link:hover {
+            background-color: #2980b9;
+        }
+        .architecture-box {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kiến trúc Microservices</h1>
+        <p class="meta">Ngày đăng: 16/01/2024 | Tác giả: MyMiniCloud Team</p>
+    </header>
+    
+    <div class="content">
+        <div class="featured-image">
+            🏗️
+        </div>
+        
+        <h2>Microservices là gì?</h2>
+        <p>Microservices là một phong cách kiến trúc phần mềm trong đó ứng dụng được xây dựng như một tập hợp các services nhỏ, độc lập. Mỗi service chạy trong process riêng và giao tiếp với nhau thông qua các cơ chế nhẹ, thường là HTTP API.</p>
+        
+        <h2>Đặc điểm của Microservices</h2>
+        <ul>
+            <li><strong>Độc lập:</strong> Mỗi service có thể được phát triển, deploy và scale độc lập</li>
+            <li><strong>Chuyên biệt:</strong> Mỗi service tập trung vào một business capability cụ thể</li>
+            <li><strong>Phân tán:</strong> Services giao tiếp qua network protocols</li>
+            <li><strong>Decentralized:</strong> Mỗi service có thể sử dụng công nghệ và database riêng</li>
+            <li><strong>Fault isolation:</strong> Lỗi ở một service không làm sập toàn bộ hệ thống</li>
+        </ul>
+        
+        <h2>Kiến trúc MyMiniCloud</h2>
+        <div class="architecture-box">
+            <p><strong>MyMiniCloud</strong> áp dụng kiến trúc microservices với các thành phần:</p>
+            <ul>
+                <li><strong>Frontend Layer:</strong> Web Server phục vụ static content</li>
+                <li><strong>Application Layer:</strong> Backend API xử lý business logic</li>
+                <li><strong>Data Layer:</strong> Database và Object Storage</li>
+                <li><strong>Security Layer:</strong> Authentication/Authorization service</li>
+                <li><strong>Infrastructure Layer:</strong> DNS, Monitoring, Proxy</li>
+            </ul>
+        </div>
+        
+        <h2>Lợi ích của Microservices</h2>
+        <ul>
+            <li><strong>Scalability:</strong> Scale từng service theo nhu cầu thực tế</li>
+            <li><strong>Flexibility:</strong> Dễ dàng thay đổi và cập nhật từng phần</li>
+            <li><strong>Resilience:</strong> Hệ thống vẫn hoạt động khi một service gặp sự cố</li>
+            <li><strong>Technology diversity:</strong> Sử dụng công nghệ phù hợp cho từng service</li>
+            <li><strong>Team autonomy:</strong> Các team có thể làm việc độc lập trên các services</li>
+        </ul>
+        
+        <h2>Thách thức</h2>
+        <p>Microservices cũng đi kèm với những thách thức:</p>
+        <ul>
+            <li>Phức tạp trong việc quản lý nhiều services</li>
+            <li>Cần có monitoring và logging tốt</li>
+            <li>Network latency và reliability</li>
+            <li>Data consistency giữa các services</li>
+            <li>Testing phức tạp hơn</li>
+        </ul>
+        
+        <h2>Best Practices</h2>
+        <ul>
+            <li>Sử dụng API Gateway để routing requests</li>
+            <li>Implement service discovery và load balancing</li>
+            <li>Centralized logging và monitoring</li>
+            <li>Containerization với Docker</li>
+            <li>CI/CD automation</li>
+        </ul>
+        
+        <a href="index.html" class="back-link">← Quay lại danh sách bài viết</a>
+    </div>
+</body>
+</html>

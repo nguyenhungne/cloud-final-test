@@ -1,0 +1,25 @@
+options {
+    directory "/var/cache/bind";
+
+    // Allow queries from any source
+    allow-query { any; };
+
+    // Enable recursive queries
+    recursion yes;
+
+    // Listen on all interfaces
+    listen-on { any; };
+    listen-on-v6 { any; };
+
+    // Forwarders for external DNS resolution
+    forwarders {
+        8.8.8.8;
+        8.8.4.4;
+    };
+
+    // DNSSEC validation
+    dnssec-validation auto;
+
+    // Other security settings
+    auth-nxdomain no;
+};

@@ -1,0 +1,2 @@
+# This directory stores MinIO object storage data
+# MinIO will use this directory to persist uploaded objects and buckets

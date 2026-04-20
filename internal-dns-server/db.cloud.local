@@ -1,0 +1,20 @@
+;
+; BIND data file for cloud.local zone
+;
+$TTL    604800
+@       IN      SOA     ns.cloud.local. admin.cloud.local. (
+                              3         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+; Name servers
+@       IN      NS      ns.cloud.local.
+
+; A records
+ns.cloud.local.                 IN      A       10.10.10.1
+web-frontend-server.cloud.local. IN      A       10.10.10.10
+app-backend.cloud.local.        IN      A       10.10.10.20
+minio.cloud.local.              IN      A       10.10.10.30
+keycloak.cloud.local.           IN      A       10.10.10.40

@@ -1,0 +1,9 @@
+//
+// Local zone configuration for cloud.local domain
+//
+
+zone "cloud.local" {
+    type master;
+    file "/etc/bind/db.cloud.local";
+    allow-update { none; };
+};

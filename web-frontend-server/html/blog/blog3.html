@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoring và Observability - MyMiniCloud Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+        }
+        .meta {
+            color: #ecf0f1;
+            font-size: 0.9em;
+        }
+        .content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .featured-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3em;
+            font-weight: bold;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-top: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-link:hover {
+            background-color: #2980b9;
+        }
+        .tool-box {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-left: 4px solid #4caf50;
+            margin: 20px 0;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Monitoring và Observability</h1>
+        <p class="meta">Ngày đăng: 17/01/2024 | Tác giả: MyMiniCloud Team</p>
+    </header>
+    
+    <div class="content">
+        <div class="featured-image">
+            📊
+        </div>
+        
+        <h2>Monitoring là gì?</h2>
+        <p>Monitoring là quá trình thu thập, phân tích và sử dụng thông tin về hiệu suất và trạng thái của hệ thống để đảm bảo nó hoạt động đúng cách. Trong môi trường cloud và microservices, monitoring là yếu tố quan trọng để duy trì độ tin cậy và hiệu suất.</p>
+        
+        <h2>Observability vs Monitoring</h2>
+        <p><strong>Monitoring</strong> trả lời câu hỏi "Có vấn đề gì đang xảy ra không?"</p>
+        <p><strong>Observability</strong> trả lời câu hỏi "Tại sao vấn đề đó xảy ra?"</p>
+        <p>Observability bao gồm 3 trụ cột chính:</p>
+        <ul>
+            <li><strong>Metrics:</strong> Dữ liệu số đo lường hiệu suất (CPU, memory, request rate)</li>
+            <li><strong>Logs:</strong> Bản ghi chi tiết các sự kiện trong hệ thống</li>
+            <li><strong>Traces:</strong> Theo dõi request qua các services khác nhau</li>
+        </ul>
+        
+        <h2>Prometheus - Time Series Database</h2>
+        <div class="tool-box">
+            <p><strong>Prometheus</strong> là hệ thống monitoring mã nguồn mở được thiết kế cho môi trường cloud-native:</p>
+            <ul>
+                <li>Pull-based metrics collection</li>
+                <li>Time series database với PromQL query language</li>
+                <li>Service discovery tự động</li>
+                <li>Alerting rules và notification</li>
+            </ul>
+        </div>
+        
+        <h2>Grafana - Visualization Platform</h2>
+        <div class="tool-box">
+            <p><strong>Grafana</strong> là nền tảng visualization và analytics:</p>
+            <ul>
+                <li>Tạo dashboard trực quan với nhiều loại charts</li>
+                <li>Hỗ trợ nhiều data sources (Prometheus, InfluxDB, Elasticsearch...)</li>
+                <li>Alerting và notification</li>
+                <li>Template variables cho dashboard động</li>
+            </ul>
+        </div>
+        
+        <h2>Monitoring trong MyMiniCloud</h2>
+        <p>Hệ thống MyMiniCloud sử dụng stack Prometheus + Grafana:</p>
+        <ul>
+            <li><strong>Node Exporter:</strong> Export system metrics (CPU, memory, disk, network)</li>
+            <li><strong>Prometheus:</strong> Scrape và lưu trữ metrics từ Node Exporter</li>
+            <li><strong>Grafana:</strong> Visualize metrics với dashboard</li>
+        </ul>
+        
+        <h2>Metrics quan trọng cần theo dõi</h2>
+        <ul>
+            <li><strong>System Metrics:</strong> CPU usage, memory usage, disk I/O, network traffic</li>
+            <li><strong>Application Metrics:</strong> Request rate, error rate, response time</li>
+            <li><strong>Business Metrics:</strong> Active users, transactions, revenue</li>
+            <li><strong>Container Metrics:</strong> Container count, restart count, resource limits</li>
+        </ul>
+        
+        <h2>Best Practices</h2>
+        <ul>
+            <li>Định nghĩa SLIs (Service Level Indicators) và SLOs (Service Level Objectives)</li>
+            <li>Thiết lập alerting rules hợp lý, tránh alert fatigue</li>
+            <li>Sử dụng dashboard để visualize metrics quan trọng</li>
+            <li>Implement distributed tracing cho microservices</li>
+            <li>Centralized logging với ELK stack hoặc Loki</li>
+            <li>Regular review và optimize monitoring strategy</li>
+        </ul>
+        
+        <h2>Truy cập Monitoring trong MyMiniCloud</h2>
+        <ul>
+            <li>Prometheus UI: <code>http://localhost:9090</code></li>
+            <li>Grafana Dashboard: <code>http://localhost:3000</code> (admin/admin)</li>
+            <li>Node Exporter Metrics: <code>http://localhost:9100/metrics</code></li>
+        </ul>
+        
+        <a href="index.html" class="back-link">← Quay lại danh sách bài viết</a>
+    </div>
+</body>
+</html>
